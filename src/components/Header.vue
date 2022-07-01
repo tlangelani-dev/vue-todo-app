@@ -1,9 +1,29 @@
 <template>
     <header>
-        <input type="text" placeholder="Enter a todo..." />
-        <button></button>
+        <input type="text" :placeholder="state.message" />
+        <button @click="onAddTodo"><i class="fa-solid fa-plus"></i></button>
     </header>
 </template>
+
+<script>
+import { reactive } from 'vue';
+
+export default {
+    setup() {
+        const state = reactive({
+            message: 'What are you doing today?'
+        });
+        const onAddTodo = () => {
+            console.log('ADD');
+        };
+
+        return {
+            state,
+            onAddTodo,
+        };
+    },
+};
+</script>
 
 <style lang="scss" scoped>
 $headerHeight: 80px;
@@ -14,7 +34,6 @@ header {
     width: 100%;
     top: 0;
     left: 0;
-    // right: 0;
     color: var(--white);
     height: $headerHeight;
     box-shadow: 0 2px 4px rgba(44, 62, 80, 0.4);
@@ -40,7 +59,7 @@ header {
         padding: 0 60px 0 0;
     }
     input::-webkit-input-placeholder {
-        color: rgba(255, 255, 255, 0.75);
+        color: rgba(255, 255, 255, 0.5);
     }
     button {
         width: 50px;
@@ -55,6 +74,11 @@ header {
         outline: none;
         appearance: none;
         box-shadow: none;
+        i {
+            font-size: 22px;
+            color: var(--black-pearl);
+            pointer-events: none;
+        }
     }
 }
 </style>

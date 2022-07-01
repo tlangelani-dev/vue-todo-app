@@ -8,6 +8,9 @@ input,
 button {
     font-family: 'Roboto', sans-serif;
 }
+body {
+    background: #edf0f1;
+}
 #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
