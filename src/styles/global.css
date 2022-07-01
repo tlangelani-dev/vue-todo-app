@@ -1,0 +1,14 @@
+:root {
+    --black-pearl: #080e2c;
+    --white: #fff;
+}
+body,
+input,
+button {
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    background: #edf0f1;
+    margin-top: 80px;
+}
+

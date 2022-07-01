@@ -11,7 +11,7 @@ import { reactive } from 'vue';
 export default {
     setup() {
         const state = reactive({
-            message: 'What are you doing today?'
+            message: 'What are you doing today?',
         });
         const onAddTodo = () => {
             console.log('ADD');
