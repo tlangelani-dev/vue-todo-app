@@ -1,20 +1,27 @@
 <template>
     <header>
-        <input type="text" :placeholder="state.message" />
+        <input type="text" v-model="state.todo" :placeholder="state.message" />
         <button @click="onAddTodo"><i class="fa-solid fa-plus"></i></button>
     </header>
 </template>
 
 <script>
 import { reactive } from 'vue';
+import { useStore } from 'vuex';
 
 export default {
     setup() {
+        const store = useStore();
+
         const state = reactive({
+            todo: null,
             message: 'What are you doing today?',
         });
         const onAddTodo = () => {
-            console.log('ADD');
+            if (state.todo) {
+                store.commit('add', state.todo);
+                state.todo = null;
+            }
         };
 
         return {
@@ -74,6 +81,7 @@ header {
         outline: none;
         appearance: none;
         box-shadow: none;
+        cursor: pointer;
         i {
             font-size: 22px;
             color: var(--black-pearl);

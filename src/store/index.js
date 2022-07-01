@@ -19,8 +19,8 @@ const store = createStore({
                     title: 'Buy a fridge next week',
                     completed: false,
                 },
-            ]
-        }
+            ],
+        };
     },
     getters: {
         todos(state) {
@@ -28,10 +28,19 @@ const store = createStore({
         },
         todo(state) {
             return (id) => {
-                return state.todos.find(todo => parseInt(todo.id) === parseInt(id));
-            }
-        }
-    }
+                return state.todos.find((todo) => parseInt(todo.id) === parseInt(id));
+            };
+        },
+    },
+    mutations: {
+        add(state, title) {
+            state.todos.push({
+                id: 12, // TODO
+                title,
+                completed: false,
+            });
+        },
+    },
 });
 
 export default store;

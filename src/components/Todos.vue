@@ -31,78 +31,77 @@ export default {
 
         return {
             todos,
-        }
+        };
     },
-}
+};
 </script>
 
 <style lang="scss" scoped>
-    .wrapper {
+.wrapper {
+    width: 100%;
+    padding: 12px;
+    ul.todos {
         width: 100%;
-        padding: 12px;
-        ul.todos {
+        li {
             width: 100%;
-            li {
-                width: 100%;
+            height: 50px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 1px 5px rgba(44, 62, 80, 0.1);
+            margin: 0 0 10px 0;
+            position: relative;
+            padding: 0 100px 0 14px;
+            display: flex;
+            align-items: center;
+            &:last-of-type {
+                margin: 0;
+            }
+            .actions {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 100px;
                 height: 50px;
-                background: #fff;
-                border-radius: 5px;
-                box-shadow: 0 1px 5px rgba(44, 62, 80, 0.10);
-                margin: 0 0 10px 0;
-                position: relative;
-                padding: 0 100px 0 14px;
-                display: flex;
-                align-items: center;
-                &:last-of-type {
-                    margin: 0;
-                }
-                .actions {
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    width: 100px;
+                button {
+                    width: 50px;
                     height: 50px;
-                    button {
-                        width: 50px;
-                        height: 50px;
-                        float: left;
-                        background: none;
-                        position: relative;
-                        border: 0px;
-                        box-shadow: none;
-                        outline: none;
-                        cursor: pointer;
-                        -webkit-appearance: none;
-                        -moz-appearance: none;
-                        &:last-of-type:before {
-                            content: '';
-                            width: 1px;
-                            height: 30px;
-                            position: absolute;
-                            top: 10px;
-                            left: 0;
-                            background: #edf0f1;
-                        }
+                    float: left;
+                    background: none;
+                    position: relative;
+                    border: 0px;
+                    box-shadow: none;
+                    outline: none;
+                    cursor: pointer;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    &:last-of-type:before {
+                        content: '';
+                        width: 1px;
+                        height: 30px;
+                        position: absolute;
+                        top: 10px;
+                        left: 0;
+                        background: #edf0f1;
+                    }
+                    i {
+                        pointer-events: none;
+                        font-size: 22px;
+                        transition: all 0.2s ease;
+                    }
+                    &.remove {
                         i {
-                            pointer-events: none;
-                            font-size: 22px;
-                            transition: all 0.2s ease;
+                            color: rgba(0, 0, 0, 0.4);
                         }
-                        &.remove {
+                        &:hover {
                             i {
-                                color: rgba(0, 0, 0, 0.4);
-                            }
-                            &:hover {
-                                i {
-                                    color: var(--red);
-                                }
+                                color: var(--red);
                             }
                         }
-                        &.complete {
-                            &:hover {
-                                i {
-                                    color: var(--green);
-                                }
+                    }
+                    &.complete {
+                        &:hover {
+                            i {
+                                color: var(--green);
                             }
                         }
                     }
@@ -110,4 +109,5 @@ export default {
             }
         }
     }
+}
 </style>
