@@ -3,15 +3,22 @@
 </template>
 
 <style lang="scss">
+body,
+input,
+button {
+    font-family: 'Roboto', sans-serif;
+}
 #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+/* variables */
+:root {
+    --black-pearl: #080e2c;
+    --white: #fff;
+}
+/* reset */
 html,
 body,
 div,
@@ -96,11 +103,8 @@ video {
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 100%;
-    font: inherit;
     vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
 article,
 aside,
 details,
@@ -114,12 +118,28 @@ nav,
 section {
     display: block;
 }
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
 body {
-    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: none;
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 ol,
 ul {
     list-style: none;
+}
+hr {
+    border: 0;
+    height: 1px;
+    background: #ccc;
 }
 blockquote,
 q {
@@ -135,5 +155,19 @@ q:after {
 table {
     border-collapse: collapse;
     border-spacing: 0;
+}
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+html,
+input,
+select,
+textarea,
+button,
+a {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 </style>
