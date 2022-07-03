@@ -24,7 +24,10 @@ const store = createStore({
     },
     getters: {
         todos(state) {
-            return state.todos;
+            return state.todos.filter((todo) => todo.completed === false);
+        },
+        todosCompleted(state) {
+            return state.todos.filter((todo) => todo.completed === true);
         },
         todo(state) {
             return (id) => {
@@ -39,6 +42,13 @@ const store = createStore({
                 title,
                 completed: false,
             });
+        },
+        remove(state, id) {
+            state.todos = state.todos.filter((todo) => parseInt(todo.id) !== parseInt(id));
+        },
+        complete(state, id) {
+            const todo = state.todos.find((todo) => parseInt(todo.id) === parseInt(id));
+            todo.completed = true;
         },
     },
 });
